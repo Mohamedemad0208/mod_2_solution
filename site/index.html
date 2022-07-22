@@ -6,9 +6,51 @@
   <script>
     var names = []; // DO NOT REMOVE
   </script>
-  <script src="SpeakHello.js"></script>
-  <script src="SpeakGoodBye.js"></script>
-  <script src="script.js"></script>
+  <script>(function () {
+  
+var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+
+
+for (var i = 0; i < names.length; i++) {
+
+  
+   var firstLetter = names[i].charAt(0).toLowerCase();
+
+  
+  if (firstLetter === 'j') {
+    console.log("Good Bye" + " " + names[i])
+  } else {
+    console.log( "Hello" +  " " + names[i])
+  }
+}
+
+})();
+</script>
+  <script>(function (window) {
+  var byeSpeaker = {};
+ byeSpeaker.name = names;
+  var greeting = "Good Bye ";
+  byeSpeaker.SpeakGoodBye = function () {
+    console.log(greeting + byeSpeaker.name);
+  }
+
+  window.byeSpeaker = byeSpeaker;
+
+})(window);
+</script>
+  <script>
+  	(function (window) {
+  var helloSpeaker = {};
+ helloSpeaker.name = names
+  var greeting = "Hello ";
+  helloSpeaker.SpeakHello = function () {
+    console.log(greeting + helloSpeaker.name);
+  }
+
+  window.helloSpeaker = helloSpeaker;
+
+})(window);
+  </script>
 </head>
 <body>
   <h1>Module 4 Solution Starter</h1>
